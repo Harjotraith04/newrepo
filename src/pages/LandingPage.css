@@ -1,0 +1,115 @@
+/* Ensures the body and html take full height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Container with Flexbox to align items */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styling */
+.header {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    z-index: 10; /* Ensure the header is above other content */
+}
+
+/* Main content area that grows and scrolls */
+.content {
+    flex: 1; /* Grow and take up remaining space */
+    padding: 20px;
+    overflow-y: auto; /* Enables scrolling within the content area */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align content horizontally */
+    justify-content: center; /* Center-align content vertically */
+}
+
+/* Styling for individual content sections */
+.content-section {
+    margin-bottom: 40px; /* Spacing between sections */
+}
+
+/* Footer styling */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Styling for the 3D models container */
+.model-container {
+    position: relative; /* Allows absolute positioning of child elements */
+    width: 100%; /* Full width for container */
+    height: 540px; /* Adjust height based on your needs */
+}
+
+/* Specific model styling */
+.model {
+    position: absolute; /* Absolute positioning within model-container */
+    z-index: 1; /* Ensure models do not overlap text */
+}
+
+/* First model positioning (Extreme left) */
+.model-first {
+    left: 0; /* Align to the extreme left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically using transform */
+}
+
+/* Second model positioning (Extreme right) */
+.model-second {
+    right: 0; /* Align to the extreme right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Center vertically using transform */
+}
+
+/* Smooth scrolling behavior for a better experience */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .header, .footer {
+        padding: 5px;
+    }
+
+    .model-container {
+        height: auto; /* Adjust height to content on small screens */
+    }
+
+    .model {
+        width: 100%; /* Models take full width on small screens */
+        height: auto; /* Maintain aspect ratio */
+        position: static; /* Reset position for smaller screens */
+    }
+}
+
+/* Ensure text is visible */
+h1 {
+    margin: 0;
+    padding: 20px;
+    color: #000; /* Change to a color that contrasts with your background */
+    position: relative;
+    z-index: 10; /* Ensure text is above other content */
+}
+
+/* Styling for login button */
+.login-button {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
